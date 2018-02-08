@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxHeight="80dp"
+                android:layout_marginTop="4dp"
+                android:textStyle="bold"
+                android:id="@+id/companyName"
+                android:layout_marginRight="8dp"
+                android:text="Company Name Here hhh hh a  a a a a  a   a  aaaaa a aaaa a ahhjkhh hhkh hkhkhgkhghkg khgkh hg hghghhjgh hghghg hg gjgyhng jgjk hh"
+                android:maxLines="4"
+                android:ellipsize="end"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/date"
+                android:text="Date: 21-02-2018"
+                android:layout_marginTop="8dp"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:paddingLeft="8dp"
+        android:textStyle="bold"
+        android:id="@+id/venue"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:text="Venue: "
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#d3d3d3"/>
+
+</LinearLayout>
