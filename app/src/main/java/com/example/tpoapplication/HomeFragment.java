@@ -7,6 +7,7 @@ import android.graphics.Movie;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -85,9 +86,10 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         RecyclerView mRecyclerView = rootView.findViewById(R.id.recycler_view);
-        ActionBar actionBar = getActivity().getActionBar();
         mAdapter = new CompaniesAdapter(companiesList,itemsCopy);
         prepareRecyclerView();
+        android.support.v7.app.ActionBar actionBar = ((AppCompatActivity )getActivity()).getSupportActionBar();
+        actionBar.setTitle("Home");
         mRecyclerView.setHasFixedSize(true);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -97,18 +99,18 @@ public class HomeFragment extends Fragment {
     }
 
     private void prepareRecyclerView(){
-        Companies companies = new Companies("Wipro","21/02/2018","Venue: R-11 CORE BLOCK SECOND FLOOR");
+        Companies companies = new Companies("Wipro","21/02/2018","Venue: R-11 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech in CSE (75% Min)",R.mipmap.ic_launcher);
         companiesList.add(companies);
-        companies = new Companies("Adobe","21/02/2018","Venue: K-2 KNOWLEDGE CENTRE SECOND FLOOR");
-        companiesList.add(companies);
-        companies = new Companies("TATA Consultancy Service","21/02/2018","Venue: R-12 CORE BLOCK SECOND FLOOR");
-        companiesList.add(companies);
-        companies = new Companies("Google","21/02/2018","Venue: R-11 CORE BLOCK SECOND FLOOR");
-        companiesList.add(companies);
-        companies = new Companies("Ford","22/02/2018","Venue: K-4 KNOWLEDGE CENTRE THIRD FLOOR");
-        companiesList.add(companies);
-        companies = new Companies("Maruti Suzuki","22/02/2018","Venue: R-12 CORE BLOCK SECOND FLOOR");
-        companiesList.add(companies);
+//        companies = new Companies("Adobe","21/02/2018","Venue: K-2 KNOWLEDGE CENTRE SECOND FLOOR","Eligibility: B.Tech in CSE or IT (80% Min)");
+//        companiesList.add(companies);
+//        companies = new Companies("TATA Consultancy Service","21/02/2018","Venue: R-12 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech (70% Min)");
+//        companiesList.add(companies);
+//        companies = new Companies("Google","21/02/2018","Venue: R-11 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech in CSE or IT (85% Min)");
+//        companiesList.add(companies);
+//        companies = new Companies("Ford","22/02/2018","Venue: K-4 KNOWLEDGE CENTRE THIRD FLOOR","Eligibility: MBA (70% Min)");
+//        companiesList.add(companies);
+//        companies = new Companies("Maruti Suzuki","22/02/2018","Venue: R-12 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech in Mech. (70% Min)");
+//        companiesList.add(companies);
         itemsCopy.addAll(companiesList);
         mAdapter.notifyDataSetChanged();
     }
@@ -147,6 +149,7 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
+
         MenuItem mSearchMenuItem = menu.findItem(R.id.search);
         searchView = (SearchView) mSearchMenuItem.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

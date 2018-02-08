@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -18,13 +19,16 @@ public class CompaniesAdapter extends RecyclerView.Adapter<CompaniesAdapter.Comp
     private List<Companies> companiesList;
     private List<Companies> itemsCopy;
     public class CompaniesViewHolder extends RecyclerView.ViewHolder {
-        public TextView companyName, venue, date;
+        public TextView companyName, venue, date, eligibility;
+        public ImageView imageView;
 
         public CompaniesViewHolder(View view) {
             super(view);
             companyName = view.findViewById(R.id.companyName);
             venue = view.findViewById(R.id.venue);
             date = view.findViewById(R.id.date);
+            eligibility = view.findViewById(R.id.eligibility);
+            imageView = view.findViewById(R.id.image);
         }
     }
 
@@ -46,6 +50,8 @@ public class CompaniesAdapter extends RecyclerView.Adapter<CompaniesAdapter.Comp
         holder.companyName.setText(companies.getName());
         holder.venue.setText(companies.getVenue());
         holder.date.setText(companies.getDate());
+        holder.eligibility.setText(companies.getEligibility());
+        holder.imageView.setImageResource(companies.getImgId());
     }
 
     @Override
@@ -59,7 +65,7 @@ public class CompaniesAdapter extends RecyclerView.Adapter<CompaniesAdapter.Comp
         } else{
             text = text.toLowerCase();
             for(Companies item: itemsCopy){
-                if(item.getName().toLowerCase().contains(text) || item.getDate().toLowerCase().contains(text)){
+                if(item.getName().toLowerCase().contains(text) || item.getDate().toLowerCase().contains(text) || item.getEligibility().toLowerCase().contains(text)){
                     companiesList.add(item);
                 }
             }

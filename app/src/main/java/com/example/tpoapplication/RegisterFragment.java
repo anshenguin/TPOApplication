@@ -5,25 +5,26 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link InfoFragment.OnFragmentInteractionListener} interface
+ * {@link RegisterFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link InfoFragment#newInstance} factory method to
+ * Use the {@link RegisterFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class InfoFragment extends Fragment {
+public class RegisterFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    String postUrl = "https://www.google.co.in";
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -33,7 +34,7 @@ public class InfoFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public InfoFragment() {
+    public RegisterFragment() {
         // Required empty public constructor
     }
 
@@ -43,11 +44,11 @@ public class InfoFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment InfoFragment.
+     * @return A new instance of fragment RegisterFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static InfoFragment newInstance(String param1, String param2) {
-        InfoFragment fragment = new InfoFragment();
+    public static RegisterFragment newInstance(String param1, String param2) {
+        RegisterFragment fragment = new RegisterFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -70,10 +71,14 @@ public class InfoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View root = inflater.inflate(R.layout.fragment_register, container, false);
+        WebView webView = root.findViewById(R.id.webView);
         android.support.v7.app.ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
-        actionBar.setTitle("Info");
-
-        return inflater.inflate(R.layout.fragment_info, container, false);
+        actionBar.setTitle("Register");
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl(postUrl);
+        webView.setHorizontalScrollBarEnabled(false);
+        return root;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

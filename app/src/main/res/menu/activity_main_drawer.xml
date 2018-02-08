@@ -12,6 +12,11 @@
             android:id="@+id/nav_info"
             android:icon="@drawable/ic_info_black_24dp"
             android:title="Info" />
+
+        <item
+            android:id="@+id/nav_webview"
+            android:icon="@drawable/ic_person_add_black_24dp"
+            android:title="Register" />
         <!--<item-->
             <!--android:id="@+id/nav_slideshow"-->
             <!--android:icon="@drawable/ic_menu_slideshow"-->

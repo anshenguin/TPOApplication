@@ -18,8 +18,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener {
-    short clicked = 0;
+        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, RegisterFragment.OnFragmentInteractionListener {
+    short clicked = 1;
     boolean mDrawerItemSelected = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +68,17 @@ public class MainActivity extends AppCompatActivity
 
                     else if (clicked == 2){
                         fragmentClass = InfoFragment.class;
+                        try {
+                            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
+                    }
+
+                    else if (clicked == 3){
+                        fragmentClass = RegisterFragment.class;
                         try {
                             fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
                         } catch (Exception e) {
@@ -138,6 +149,8 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_info) {
             clicked = 2;
+        } else if (id == R.id.nav_webview){
+            clicked = 3;
         }
         mDrawerItemSelected = true;
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
