@@ -18,7 +18,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener, InfoFragment.OnFragmentInteractionListener, RegisterFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener, RegisterFragment.OnFragmentInteractionListener,DiplomaFragment.OnFragmentInteractionListener,GraduationFragment.OnFragmentInteractionListener,
+        MBAFragment.OnFragmentInteractionListener,MCAFragment.OnFragmentInteractionListener,PolytechnicFragment.OnFragmentInteractionListener {
     short clicked = 1;
     boolean mDrawerItemSelected = false;
     @Override
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity
                     }
 
                     else if (clicked == 2){
-                        fragmentClass = InfoFragment.class;
+                        fragmentClass = RegisterFragment.class;
                         try {
                             fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
                         } catch (Exception e) {
@@ -76,9 +77,48 @@ public class MainActivity extends AppCompatActivity
                         FragmentManager fragmentManager = getSupportFragmentManager();
                         fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
                     }
-
                     else if (clicked == 3){
-                        fragmentClass = RegisterFragment.class;
+                        fragmentClass = PolytechnicFragment.class;
+                        try {
+                            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
+                    }
+                    else if (clicked == 4){
+                        fragmentClass = GraduationFragment.class;
+                        try {
+                            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
+                    }
+                    else if (clicked == 5){
+                        fragmentClass = MBAFragment.class;
+                        try {
+                            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
+                    }
+                    else if (clicked == 6){
+                        fragmentClass = MCAFragment.class;
+                        try {
+                            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
+                    }
+                    else if (clicked == 7){
+                        fragmentClass = DiplomaFragment.class;
                         try {
                             fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
                         } catch (Exception e) {
@@ -147,10 +187,18 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             clicked = 1;
             // Handle the camera action
-        } else if (id == R.id.nav_info) {
-            clicked = 2;
         } else if (id == R.id.nav_webview){
+            clicked = 2;
+        }else if (id == R.id.nav_poly){
             clicked = 3;
+        }else if (id == R.id.nav_grad){
+            clicked = 4;
+        }else if (id == R.id.nav_mba){
+            clicked = 5;
+        }else if (id == R.id.nav_mca){
+            clicked = 6;
+        }else if (id == R.id.nav_diploma){
+            clicked = 7;
         }
         mDrawerItemSelected = true;
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

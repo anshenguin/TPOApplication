@@ -8,15 +8,33 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_black_24dp"
             android:title="Home" />
-        <item
-            android:id="@+id/nav_info"
-            android:icon="@drawable/ic_info_black_24dp"
-            android:title="Info" />
 
         <item
             android:id="@+id/nav_webview"
             android:icon="@drawable/ic_person_add_black_24dp"
             android:title="Register" />
+        <item
+            android:id="@+id/nav_poly"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="Polytechnic Companies" />
+        <item
+            android:id="@+id/nav_grad"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="Graduation Companies" />
+        <item
+            android:id="@+id/nav_mba"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="MBA Companies" />
+        <item
+            android:id="@+id/nav_mca"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="MCA Companies" />
+        <item
+            android:id="@+id/nav_diploma"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="Diploma Companies" />
+
+
         <!--<item-->
             <!--android:id="@+id/nav_slideshow"-->
             <!--android:icon="@drawable/ic_menu_slideshow"-->

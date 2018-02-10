@@ -35,7 +35,7 @@ import java.util.List;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class PolytechnicFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public HomeFragment() {
+    public PolytechnicFragment() {
         // Required empty public constructor
     }
 
@@ -86,11 +86,13 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_polytechnic, container, false);
         RecyclerView mRecyclerView = rootView.findViewById(R.id.recycler_view);
         mAdapter = new CompaniesAdapter(companiesList,itemsCopy);
         prepareRecyclerView();
         android.support.v7.app.ActionBar actionBar = ((AppCompatActivity )getActivity()).getSupportActionBar();
+        actionBar.setTitle("Home");
+        mRecyclerView.setHasFixedSize(true);
         Button regButton = rootView.findViewById(R.id.regbutton);
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,8 +100,6 @@ public class HomeFragment extends Fragment {
                 startActivity(new Intent(getActivity(),WebViewActivity.class));
             }
         });
-        actionBar.setTitle("Home");
-        mRecyclerView.setHasFixedSize(true);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());

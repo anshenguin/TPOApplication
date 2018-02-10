@@ -21,14 +21,14 @@
             android:id="@+id/imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:paddingTop="16dp"
+            android:paddingTop="12dp"
             app:srcCompat="@drawable/daviet_logo" />
 
         <TextView
-            android:paddingTop="8dp"
+            android:layout_marginTop="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="GHAR GHAR NAUKRI DAVIET"
+            android:text="CAMPUS TO CORPORATE DAVIET"
             android:textColor="#212121"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:textColor="#424242"
             android:layout_height="wrap_content"
-            android:text="A Govt. of Punjab Initiative" />
+            android:text="(Ghar Ghar Naukri 2018)" />
     </LinearLayout>
     <View
         android:layout_height="0.8dp"

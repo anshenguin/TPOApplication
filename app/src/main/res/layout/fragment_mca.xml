@@ -20,6 +20,7 @@
         android:text="CLICK HERE TO REGISTER"
         android:textSize="16sp"
         android:id="@+id/regbutton"
+
         android:elevation="4dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/button_background"

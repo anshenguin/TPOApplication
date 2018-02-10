@@ -1,6 +1,7 @@
 package com.example.tpoapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.Button;
 
 
 /**
@@ -24,7 +26,7 @@ import android.webkit.WebView;
 public class RegisterFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    String postUrl = "https://www.google.co.in";
+    String postUrl = "http://davietjal.org/ggn/registration.php";
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -75,6 +77,13 @@ public class RegisterFragment extends Fragment {
         WebView webView = root.findViewById(R.id.webView);
         android.support.v7.app.ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
         actionBar.setTitle("Register");
+        Button regButton = root.findViewById(R.id.regbutton);
+        regButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(),WebViewActivity.class));
+            }
+        });
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(postUrl);
         webView.setHorizontalScrollBarEnabled(false);
