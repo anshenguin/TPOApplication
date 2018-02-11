@@ -96,7 +96,10 @@ public class MCAFragment extends Fragment {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(),WebViewActivity.class));
+                String url = "http://davietjal.org/ggn/registration.php";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
             }
         });
         mRecyclerView.setHasFixedSize(true);
@@ -108,7 +111,7 @@ public class MCAFragment extends Fragment {
     }
 
     private void prepareRecyclerView(){
-        Companies companies = new Companies("Wipro","21/02/2018","Venue: R-11 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech in CSE (75% Min)",R.mipmap.ic_launcher);
+        Companies companies = new Companies("Test Company","21/02/2018","Venue: Test Venue","Eligibility: Test",R.mipmap.ic_launcher);
         companiesList.add(companies);
 //        companies = new Companies("Adobe","21/02/2018","Venue: K-2 KNOWLEDGE CENTRE SECOND FLOOR","Eligibility: B.Tech in CSE or IT (80% Min)");
 //        companiesList.add(companies);

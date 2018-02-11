@@ -96,7 +96,10 @@ public class MBAFragment extends Fragment {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(),WebViewActivity.class));
+                String url = "http://davietjal.org/ggn/registration.php";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
             }
         });
         mRecyclerView.setHasFixedSize(true);
@@ -108,18 +111,68 @@ public class MBAFragment extends Fragment {
     }
 
     private void prepareRecyclerView(){
-        Companies companies = new Companies("Wipro","21/02/2018","Venue: R-11 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech in CSE (75% Min)",R.mipmap.ic_launcher);
+        Companies companies = new Companies("HDFC","-","-","Eligibility: Graduation/MBA",R.drawable.hdfc);
         companiesList.add(companies);
-//        companies = new Companies("Adobe","21/02/2018","Venue: K-2 KNOWLEDGE CENTRE SECOND FLOOR","Eligibility: B.Tech in CSE or IT (80% Min)");
-//        companiesList.add(companies);
-//        companies = new Companies("TATA Consultancy Service","21/02/2018","Venue: R-12 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech (70% Min)");
-//        companiesList.add(companies);
-//        companies = new Companies("Google","21/02/2018","Venue: R-11 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech in CSE or IT (85% Min)");
-//        companiesList.add(companies);
-//        companies = new Companies("Ford","22/02/2018","Venue: K-4 KNOWLEDGE CENTRE THIRD FLOOR","Eligibility: MBA (70% Min)");
-//        companiesList.add(companies);
-//        companies = new Companies("Maruti Suzuki","22/02/2018","Venue: R-12 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech in Mech. (70% Min)");
-//        companiesList.add(companies);
+        companies = new Companies("Angel Broking","-","-","Eligibility: Graduation/MBA",R.drawable.angel_broking);
+        companiesList.add(companies);
+        companies = new Companies("Tikona Digital","-","-","Eligibility: Graduation/MBA",R.drawable.tikona_digital);
+        companiesList.add(companies);
+        companies = new Companies("Videocon","-","-","Eligibility: Graduation/MBA",R.drawable.videocon);
+        companiesList.add(companies);
+        companies = new Companies("Maruti Suzuki","-","-","Eligibility: Graduation/MBA",R.drawable.maruti_suzuki);
+        companiesList.add(companies);
+        companies = new Companies("Airtel","-","-","Eligibility: Graduation/MBA",R.drawable.airtel);
+        companiesList.add(companies);
+        companies = new Companies("Policybazaar","-","-","Eligibility: Graduation/MBA",R.drawable.policy_bazaar);
+        companiesList.add(companies);
+        companies = new Companies("Tholons","-","-","Eligibility: Graduation/MBA",R.drawable.tholons);
+        companiesList.add(companies);
+        companies = new Companies("Collabera","-","-","Eligibility: Graduation/MBA",R.drawable.collabera);
+        companiesList.add(companies);
+        companies = new Companies("Accurate Accounting","-","-","Eligibility: Graduation/MBA",R.drawable.accurate_accounting);
+        companiesList.add(companies);
+        companies = new Companies("Om Careers","-","-","Eligibility: Graduation/MBA",R.drawable.om_careers);
+        companiesList.add(companies);
+        companies = new Companies("Grazitti","-","-","Eligibility: Graduation/MBA",R.drawable.grazitti);
+        companiesList.add(companies);
+        companies = new Companies("Birla Life","-","-","Eligibility: Graduation/MBA",R.drawable.birla);
+        companiesList.add(companies);
+        companies = new Companies("Ralson India","-","-","Eligibility: Graduation/MBA",R.drawable.ralson);
+        companiesList.add(companies);
+        companies = new Companies("Investors Clinic","-","-","Eligibility: Graduation/MBA",R.drawable.investors_clinic);
+        companiesList.add(companies);
+        companies = new Companies("PNB Metlife","-","-","Eligibility: Graduation/MBA",R.drawable.pnb_metlife);
+        companiesList.add(companies);
+        companies = new Companies("Max Life","-","-","Eligibility: Graduation/MBA",R.drawable.maxlife);
+        companiesList.add(companies);
+        companies = new Companies("Capital Trust","-","-","Eligibility: Graduation/MBA",R.drawable.capitaltrust);
+        companiesList.add(companies);
+        companies = new Companies("Patel Hospital","-","-","Eligibility: Graduation/MBA",R.drawable.patelhospital);
+        companiesList.add(companies);
+        companies = new Companies("UAE Exchange","-","-","Eligibility: Graduation/MBA",R.drawable.uae_exchange);
+        companiesList.add(companies);
+        companies = new Companies("Jackson Tech Solutions","-","-","Eligibility: Graduation/MBA",R.drawable.no_logo);
+        companiesList.add(companies);
+        companies = new Companies("Paytm","-","-","Eligibility: Graduation/MBA",R.drawable.paytm);
+        companiesList.add(companies);
+        companies = new Companies("Teleperformance","-","-","Eligibility: Graduation/MBA",R.drawable.teleperformance);
+        companiesList.add(companies);
+        companies = new Companies("TeamLease","-","-","Eligibility: Graduation/MBA",R.drawable.teamlease);
+        companiesList.add(companies);
+        companies = new Companies("AR Tech Solutions","-","-","Eligibility: Graduation/MBA",R.drawable.ar_tech_solns);
+        companiesList.add(companies);
+        companies = new Companies("Swipecubes Soft Pvt. Ltd.","-","-","Eligibility: Graduation/MBA",R.drawable.swipecubes);
+        companiesList.add(companies);
+        companies = new Companies("Intersoft Professional","-","-","Eligibility: Graduation/MBA",R.drawable.intersoft_professional);
+        companiesList.add(companies);
+        companies = new Companies("WebAstral","-","-","Eligibility: Graduation/MBA",R.drawable.webastral);
+        companiesList.add(companies);
+        companies = new Companies("Webze Technologies","-","-","Eligibility: Graduation/MBA",R.drawable.webze_technologies);
+        companiesList.add(companies);
+        companies = new Companies("Pisoft","-","-","Eligibility: Graduation/MBA",R.drawable.pisoft);
+        companiesList.add(companies);
+        companies = new Companies("G. Tech Solutions","-","-","Eligibility: Graduation/MBA",R.drawable.gtech_solns);
+        companiesList.add(companies);
         itemsCopy.addAll(companiesList);
         mAdapter.notifyDataSetChanged();
     }

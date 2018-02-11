@@ -97,7 +97,10 @@ public class DiplomaFragment extends Fragment {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(),WebViewActivity.class));
+                String url = "http://davietjal.org/ggn/registration.php";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
             }
         });
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
@@ -108,18 +111,34 @@ public class DiplomaFragment extends Fragment {
     }
 
     private void prepareRecyclerView(){
-        Companies companies = new Companies("Wipro","21/02/2018","Venue: R-11 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech in CSE (75% Min)",R.mipmap.ic_launcher);
+        Companies companies = new Companies("Pingaksho Technologies","-","-","Eligibility: Diploma",R.drawable.pingaksho_technologies);
         companiesList.add(companies);
-//        companies = new Companies("Adobe","21/02/2018","Venue: K-2 KNOWLEDGE CENTRE SECOND FLOOR","Eligibility: B.Tech in CSE or IT (80% Min)");
-//        companiesList.add(companies);
-//        companies = new Companies("TATA Consultancy Service","21/02/2018","Venue: R-12 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech (70% Min)");
-//        companiesList.add(companies);
-//        companies = new Companies("Google","21/02/2018","Venue: R-11 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech in CSE or IT (85% Min)");
-//        companiesList.add(companies);
-//        companies = new Companies("Ford","22/02/2018","Venue: K-4 KNOWLEDGE CENTRE THIRD FLOOR","Eligibility: MBA (70% Min)");
-//        companiesList.add(companies);
-//        companies = new Companies("Maruti Suzuki","22/02/2018","Venue: R-12 CORE BLOCK SECOND FLOOR","Eligibility: B.Tech in Mech. (70% Min)");
-//        companiesList.add(companies);
+        companies = new Companies("Design Sute","-","-","Eligibility: Diploma",R.drawable.no_logo);
+        companiesList.add(companies);
+        companies = new Companies("Power System and Control","-","-","Eligibility: Diploma",R.drawable.power_sys);
+        companiesList.add(companies);
+        companies = new Companies("Itenic Solutions","-","-","Eligibility: Diploma",R.drawable.itenic_logo);
+        companiesList.add(companies);
+        companies = new Companies("Solar Power","-","-","Eligibility: Diploma",R.drawable.no_logo);
+        companiesList.add(companies);
+        companies = new Companies("EME Technologies","-","-","Eligibility: Diploma",R.drawable.eme);
+        companiesList.add(companies);
+        companies = new Companies("Exide Industries Ltd.","-","-","Eligibility: Diploma",R.drawable.exide);
+        companiesList.add(companies);
+        companies = new Companies("Badve Engineering","-","-","Eligibility: Diploma",R.drawable.badve);
+        companiesList.add(companies);
+        companies = new Companies("Knoor Industries","-","-","Eligibility: Diploma",R.drawable.no_logo);
+        companiesList.add(companies);
+        companies = new Companies("BMS Batteries","-","-","Eligibility: Diploma",R.drawable.no_logo);
+        companiesList.add(companies);
+        companies = new Companies("Adani Solar","-","-","Eligibility: Diploma",R.drawable.adani);
+        companiesList.add(companies);
+        companies = new Companies("Solar First Engineering","-","-","Eligibility: Diploma",R.drawable.solar_first);
+        companiesList.add(companies);
+        companies = new Companies("Telcocrats","-","-","Eligibility: Diploma",R.drawable.telcocrats);
+        companiesList.add(companies);
+        companies = new Companies("CSC e-Goverence Ltd.","-","-","Eligibility: Diploma",R.drawable.csc_e_gov);
+        companiesList.add(companies);
         itemsCopy.addAll(companiesList);
         mAdapter.notifyDataSetChanged();
     }

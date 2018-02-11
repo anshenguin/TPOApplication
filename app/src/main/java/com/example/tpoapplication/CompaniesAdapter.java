@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 import java.util.List;
 
 /**
@@ -51,7 +54,11 @@ public class CompaniesAdapter extends RecyclerView.Adapter<CompaniesAdapter.Comp
         holder.venue.setText(companies.getVenue());
         holder.date.setText(companies.getDate());
         holder.eligibility.setText(companies.getEligibility());
-        holder.imageView.setImageResource(companies.getImgId());
+        Glide.with(holder.imageView.getContext())
+                .load(companies.getImgId())
+                .placeholder(R.drawable.no_logo)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(holder.imageView);
     }
 
     @Override

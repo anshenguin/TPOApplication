@@ -18,7 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener, RegisterFragment.OnFragmentInteractionListener,DiplomaFragment.OnFragmentInteractionListener,GraduationFragment.OnFragmentInteractionListener,
+        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener,DiplomaFragment.OnFragmentInteractionListener,GraduationFragment.OnFragmentInteractionListener,
         MBAFragment.OnFragmentInteractionListener,MCAFragment.OnFragmentInteractionListener,PolytechnicFragment.OnFragmentInteractionListener {
     short clicked = 1;
     boolean mDrawerItemSelected = false;
@@ -67,16 +67,6 @@ public class MainActivity extends AppCompatActivity
                         fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
                     }
 
-                    else if (clicked == 2){
-                        fragmentClass = RegisterFragment.class;
-                        try {
-                            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
-                    }
                     else if (clicked == 3){
                         fragmentClass = PolytechnicFragment.class;
                         try {
@@ -187,8 +177,6 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             clicked = 1;
             // Handle the camera action
-        } else if (id == R.id.nav_webview){
-            clicked = 2;
         }else if (id == R.id.nav_poly){
             clicked = 3;
         }else if (id == R.id.nav_grad){
