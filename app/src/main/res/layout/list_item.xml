@@ -15,8 +15,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="8dp"
-            android:id="@+id/image"
-            />
+            android:id="@+id/image"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,7 +30,6 @@
                 android:textStyle="bold"
                 android:id="@+id/companyName"
                 android:layout_marginRight="8dp"
-                android:text="Company Name Here hhh hh a  a a a a  a   a  aaaaa a aaaa a ahhjkhh hhkh hkhkhgkhghkg khgkh hg hghghhjgh hghghg hg gjgyhng jgjk hh"
                 android:maxLines="4"
                 android:ellipsize="end"
                 android:textSize="16sp"

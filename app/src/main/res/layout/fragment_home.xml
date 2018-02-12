@@ -17,8 +17,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="CLICK HERE TO REGISTER"
-        android:textSize="16sp"
+        android:text="REGISTER FOR CAMPUS TO CORPORATE"
+        android:textSize="14sp"
         android:id="@+id/regbutton"
         android:elevation="4dp"
         android:layout_alignParentBottom="true"

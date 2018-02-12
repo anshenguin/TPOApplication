@@ -1,5 +1,6 @@
 package com.example.tpoapplication;
 
+import android.content.Intent;
 import android.icu.text.IDNA;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,27 +19,40 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener,DiplomaFragment.OnFragmentInteractionListener,GraduationFragment.OnFragmentInteractionListener,
-        MBAFragment.OnFragmentInteractionListener,MCAFragment.OnFragmentInteractionListener,PolytechnicFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener,AboutDavietFragment.OnFragmentInteractionListener,AboutFragment.OnFragmentInteractionListener {
     short clicked = 1;
     boolean mDrawerItemSelected = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         android.support.v4.app.Fragment fragment = null;
         Class fragmentClass = null;
-        fragmentClass = HomeFragment.class;
-        try {
-            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
+        int selection = getIntent().getExtras().getInt("Option");
+        if(selection==1) {
+            fragmentClass = HomeFragment.class;
+            try {
+                fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
         }
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
 
+        else if(selection == 3){
+            fragmentClass = AboutFragment.class;
+            try {
+                fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+        }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.addDrawerListener(new DrawerLayout.DrawerListener() {
             @Override
@@ -67,48 +81,18 @@ public class MainActivity extends AppCompatActivity
                         fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
                     }
 
+                    else if (clicked == 2){
+                        fragmentClass = AboutFragment.class;
+                        try {
+                            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
+                    }
                     else if (clicked == 3){
-                        fragmentClass = PolytechnicFragment.class;
-                        try {
-                            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
-                    }
-                    else if (clicked == 4){
-                        fragmentClass = GraduationFragment.class;
-                        try {
-                            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
-                    }
-                    else if (clicked == 5){
-                        fragmentClass = MBAFragment.class;
-                        try {
-                            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
-                    }
-                    else if (clicked == 6){
-                        fragmentClass = MCAFragment.class;
-                        try {
-                            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
-                    }
-                    else if (clicked == 7){
-                        fragmentClass = DiplomaFragment.class;
+                        fragmentClass = AboutDavietFragment.class;
                         try {
                             fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
                         } catch (Exception e) {
@@ -131,9 +115,15 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
         NavigationView navigationView = findViewById(R.id.nav_view);
+
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_home);
+        if(selection==1)
+            navigationView.setCheckedItem(R.id.nav_home);
+        else if(selection==3)
+            navigationView.setCheckedItem(R.id.nav_about);
+
     }
 
     @Override
@@ -177,16 +167,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             clicked = 1;
             // Handle the camera action
-        }else if (id == R.id.nav_poly){
-            clicked = 3;
-        }else if (id == R.id.nav_grad){
-            clicked = 4;
-        }else if (id == R.id.nav_mba){
-            clicked = 5;
-        }else if (id == R.id.nav_mca){
-            clicked = 6;
-        }else if (id == R.id.nav_diploma){
-            clicked = 7;
+        }else if (id == R.id.nav_about){
+            clicked = 2;
         }
         mDrawerItemSelected = true;
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
