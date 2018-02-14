@@ -13,6 +13,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     RelativeLayout companies;
     RelativeLayout reg;
     Button locate;
+    RelativeLayout about;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         companies = findViewById(R.id.companies);
         reg = findViewById(R.id.register);
         locate = findViewById(R.id.locate);
-//        about = findViewById(R.id.about);
+        about = findViewById(R.id.about);
 //        about_d = findViewById(R.id.about_d);
 
         locate.setOnClickListener(new View.OnClickListener() {
@@ -51,13 +52,13 @@ public class HomeScreenActivity extends AppCompatActivity {
             }
         });
 
-//        about.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                SELECTED_OPTION = 3;
-//                sendIntent();
-//            }
-//        });
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SELECTED_OPTION = 3;
+                sendIntent();
+            }
+        });
 //
 //        about_d.setOnClickListener(new View.OnClickListener() {
 //            @Override

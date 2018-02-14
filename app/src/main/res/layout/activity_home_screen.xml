@@ -91,73 +91,90 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_height="wrap_content">
+        android:layout_height="160dp"
+            android:baselineAligned="false">
 
             <RelativeLayout
                 android:layout_width="0dp"
-                android:background="#ccc"
+                android:background="#4DD0E1"
                 android:layout_weight="1"
+                android:layout_marginRight="4dp"
                 android:id="@+id/companies"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_centerHorizontal="true"
                     android:id="@+id/icon_1"
-                    app:srcCompat="@drawable/ic_school_black_24dp"/>
+                    app:srcCompat="@drawable/ic_work_black_24dp"
+                    />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/icon_1"
+                    android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="TEST TEXT" />
+                    android:text="List of Recruiters" />
             </RelativeLayout>
         <RelativeLayout
             android:layout_width="0dp"
-            android:background="#a23"
+            android:background="#5C6BC0"
+            android:layout_marginLeft="4dp"
             android:layout_weight="1"
             android:id="@+id/register"
-            android:layout_height="match_parent">
+            android:minHeight="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp">
 
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/icon_2"
-                app:srcCompat="@drawable/ic_school_black_24dp"/>
+                app:srcCompat="@drawable/ic_person_black_24dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/icon_2"
                 android:gravity="center"
-                android:text="TEST TEXT" />
+                android:text="Register for C2C (for Candidates)" />
         </RelativeLayout>
     </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
+            android:layout_marginTop="8dp"
             android:weightSum="2"
-            android:layout_height="wrap_content">
+            android:layout_height="160dp">
 
             <RelativeLayout
                 android:layout_width="0dp"
-                android:background="#23a"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_height="match_parent">
+                android:layout_marginRight="4dp"
+                android:minHeight="160dp"
+                android:background="#7E57C2"
+                android:layout_marginEnd="4dp">
 
                 <ImageView
+                    android:id="@+id/icon_3"
                     android:layout_width="100dp"
+
                     android:layout_height="100dp"
                     android:layout_centerHorizontal="true"
-                    android:id="@+id/icon_3"
-                    app:srcCompat="@drawable/ic_school_black_24dp"/>
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/ic_usher_man_with_tie" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -165,21 +182,28 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/icon_3"
+                    android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="TEST TEXT" />
+                    android:textStyle="bold"
+                    android:text="Register for C2C (for Companies)" />
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="0dp"
-                android:background="#77c"
+                android:background="#03A9F4"
                 android:layout_weight="1"
-                android:layout_height="match_parent">
+                android:id="@+id/about"
+                android:layout_marginLeft="4dp"
+                android:layout_height="wrap_content"
+                android:minHeight="160dp"
+                android:layout_marginStart="4dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_centerHorizontal="true"
                     android:id="@+id/icon_4"
-                    app:srcCompat="@drawable/ic_school_black_24dp"/>
+                    android:padding="2dp"
+                    app:srcCompat="@drawable/ic_info_black_24dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -187,8 +211,10 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/icon_4"
+                    android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="TEST TEXT" />
+                    android:textStyle="bold"
+                    android:text="About Campus to Corporate" />
             </RelativeLayout>
         </LinearLayout>
 
