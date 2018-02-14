@@ -5,102 +5,204 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:layout_margin="8dp"
     tools:context="com.example.tpoapplication.HomeScreenActivity">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical">-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:weightSum="2"-->
+        <!--android:layout_height="wrap_content">-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:id="@+id/companies"-->
+                <!--android:layout_margin="8dp"-->
+                <!--android:background="#7986CB"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="80dp"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:id="@+id/icon_1"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--app:srcCompat="@drawable/ic_work_black_24dp"/>-->
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:gravity="center"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:textColor="#000"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginBottom="4dp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:text="All Companies" />-->
+            <!--</RelativeLayout>-->
+        <!--<RelativeLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:id="@+id/register"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_margin="8dp"-->
+            <!--android:background="#64B5F6"-->
+            <!--android:layout_height="140dp">-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="80dp"-->
+                <!--android:id="@+id/icon_2"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--app:srcCompat="@drawable/ic_person_add_black_24dp"/>-->
+
+            <!--<android.support.v7.widget.AppCompatTextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginBottom="4dp"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textColor="#000"-->
+                <!--android:textSize="16sp"-->
+                <!--android:text="Register" />-->
+        <!--</RelativeLayout>-->
+
+
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_height="wrap_content">-->
+        <!---->
+
+    <!--</LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:weightSum="2"
         android:layout_height="wrap_content">
+
             <RelativeLayout
                 android:layout_width="0dp"
+                android:background="#ccc"
                 android:layout_weight="1"
                 android:id="@+id/companies"
-                android:layout_margin="8dp"
-                android:background="#7986CB"
-                android:layout_height="140dp">
+                android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
                     android:id="@+id/icon_1"
-                    android:layout_centerInParent="true"
-                    app:srcCompat="@drawable/ic_work_black_24dp"/>
+                    app:srcCompat="@drawable/ic_school_black_24dp"/>
 
-                <android.support.v7.widget.AppCompatTextView
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/icon_1"
                     android:gravity="center"
-                    android:layout_alignParentBottom="true"
-                    android:textColor="#000"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="4dp"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:text="All Companies" />
+                    android:text="TEST TEXT" />
             </RelativeLayout>
         <RelativeLayout
             android:layout_width="0dp"
-            android:id="@+id/register"
+            android:background="#a23"
             android:layout_weight="1"
-            android:layout_margin="8dp"
-            android:background="#64B5F6"
-            android:layout_height="140dp">
+            android:id="@+id/register"
+            android:layout_height="match_parent">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:id="@+id/icon_2"
-                android:layout_centerInParent="true"
-                app:srcCompat="@drawable/ic_person_add_black_24dp"/>
-
-            <android.support.v7.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="4dp"
-                android:textStyle="bold"
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:text="Register" />
+                android:id="@+id/icon_2"
+                app:srcCompat="@drawable/ic_school_black_24dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/icon_2"
+                android:gravity="center"
+                android:text="TEST TEXT" />
         </RelativeLayout>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_height="wrap_content">
 
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:background="#23a"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/icon_3"
+                    app:srcCompat="@drawable/ic_school_black_24dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/icon_3"
+                    android:gravity="center"
+                    android:text="TEST TEXT" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:background="#77c"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/icon_4"
+                    app:srcCompat="@drawable/ic_school_black_24dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/icon_4"
+                    android:gravity="center"
+                    android:text="TEST TEXT" />
+            </RelativeLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
-    </LinearLayout>
-    <LinearLayout
+    <Button
+        android:id="@+id/locate"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:layout_marginTop="16dp"
-            android:text="ABOUT CAMPUS TO CORPORATE"
-            android:textColor="#000"
-            android:id="@+id/about"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/gradient"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:id="@+id/about_d"
-            android:layout_marginTop="16dp"
-            android:text="About DAVIET"
-            android:textColor="#000"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/gradient"
-            />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/gradient"
+        android:text="LOCATE DAVIET ON MAP"
+        android:textColor="#212121"
+        />
 
-    </LinearLayout>
+
 </LinearLayout>

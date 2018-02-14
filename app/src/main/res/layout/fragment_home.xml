@@ -9,20 +9,7 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/recycler_view"
-        android:layout_marginBottom="56dp"
         android:layout_height="match_parent">
-
     </android.support.v7.widget.RecyclerView>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="REGISTER FOR CAMPUS TO CORPORATE"
-        android:textSize="14sp"
-        android:id="@+id/regbutton"
-        android:elevation="4dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/button_background"
-        />
 
 </RelativeLayout>

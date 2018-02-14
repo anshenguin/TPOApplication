@@ -12,7 +12,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     int SELECTED_OPTION;
     RelativeLayout companies;
     RelativeLayout reg;
-    Button about,about_d;
+    Button locate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +20,19 @@ public class HomeScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
         companies = findViewById(R.id.companies);
         reg = findViewById(R.id.register);
-        about = findViewById(R.id.about);
-        about_d = findViewById(R.id.about_d);
+        locate = findViewById(R.id.locate);
+//        about = findViewById(R.id.about);
+//        about_d = findViewById(R.id.about_d);
+
+        locate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://goo.gl/maps/YmizxbLXVRN2";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
         companies.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,23 +51,23 @@ public class HomeScreenActivity extends AppCompatActivity {
             }
         });
 
-        about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SELECTED_OPTION = 3;
-                sendIntent();
-            }
-        });
-
-        about_d.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = "http://davietjal.org/about";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-            }
-        });
+//        about.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                SELECTED_OPTION = 3;
+//                sendIntent();
+//            }
+//        });
+//
+//        about_d.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String url = "http://davietjal.org/about";
+//                Intent i = new Intent(Intent.ACTION_VIEW);
+//                i.setData(Uri.parse(url));
+//                startActivity(i);
+//            }
+//        });
     }
 
     public void sendIntent(){

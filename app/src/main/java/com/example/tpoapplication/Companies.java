@@ -5,15 +5,19 @@ package com.example.tpoapplication;
  */
 
 public class Companies {
-    private String name, date, venue, eligibility;
-    private int ImgId;
+    private String name, date, venue, eligibility, salary, ImgURL;
     public Companies(){}
-    public Companies(String name, String date, String venue, String eligibility, int ImgId){
+    public Companies(String name,String date, String venue, String eligibility, String ImgId, String salary){
         this.name = name;
-        this.date = date;
         this.eligibility = eligibility;
         this.venue = venue;
-        this.ImgId = ImgId;
+        this.ImgURL = ImgId;
+        this.salary = salary;
+        this.date = date;
+    }
+
+    public Companies(String name){
+        this.name = name;
     }
 
     public String getDate() {
@@ -32,12 +36,20 @@ public class Companies {
         return eligibility;
     }
 
-    public int getImgId() {
-        return ImgId;
+    public String getImgId() {
+        return ImgURL;
     }
 
-    public void setImgId(int imgId) {
-        ImgId = imgId;
+    public String getSalary() {
+        return salary;
+    }
+
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+
+    public void setImgId(String imgId) {
+        ImgURL = imgId;
     }
 
     public void setEligibility(String eligibility) {
