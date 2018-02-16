@@ -243,8 +243,7 @@
         android:layout_marginTop="4dp"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+
         android:layout_height="wrap_content">
 
         <RelativeLayout
@@ -314,112 +313,137 @@
         </RelativeLayout>
 
     </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registration"
-        android:gravity="center"
-        android:layout_marginTop="4dp"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
 
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:orientation="horizontal"
-    android:weightSum="2"
-    android:layout_height="wrap_content">
-    <RelativeLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_margin="8dp"
-        android:id="@+id/reg_rec"
-        android:background="#7986CB"
-        android:layout_height="140dp">
-        <ImageView
-            android:id="@+id/icon_1"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerInParent="true"
-            app:srcCompat="@drawable/ic_usher_man_with_tie" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#90CAF9"
+            android:layout_marginTop="8dp"
+            android:paddingBottom="8dp">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Registration"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-        <android.support.v7.widget.AppCompatTextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:layout_alignParentBottom="true"
-    android:textColor="#000"
-    android:layout_centerHorizontal="true"
-    android:layout_marginBottom="4dp"
-    android:textStyle="bold"
-    android:textSize="16sp"
-    android:text="Recruiters" />
-    </RelativeLayout>
-    <RelativeLayout
-    android:layout_width="0dp"
-    android:id="@+id/register"
-    android:layout_weight="1"
-    android:layout_margin="8dp"
-    android:background="#64B5F6"
-    android:layout_height="140dp">
+                <RelativeLayout
+                    android:id="@+id/reg_rec"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="#B39DDB ">
 
-    <ImageView
-    android:layout_width="80dp"
-    android:layout_height="80dp"
-    android:id="@+id/icon_2"
-    android:layout_centerInParent="true"
-    app:srcCompat="@drawable/ic_school_black_24dp"/>
-
-    <android.support.v7.widget.AppCompatTextView
-    android:layout_width="match_parent"
-    android:gravity="center"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginBottom="4dp"
-    android:textStyle="bold"
-    android:textColor="#000"
-    android:textSize="16sp"
-    android:text="Job Seekers" />
-    </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/icon_1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_usher_man_with_tie" />
 
 
-    </LinearLayout>
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:text="Recruiters"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/register"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:background="#9FA8DA">
+
+                    <ImageView
+                        android:id="@+id/icon_2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_school_black_24dp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:text="Job Seekers"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
 
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
             android:id="@+id/locate"
+
             android:layout_marginBottom="16dp"
             android:layout_height="100dp">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:background="@drawable/map_daviet"
-        android:scaleType="centerCrop"
-        android:layout_margin="8dp"
-        android:layout_height="match_parent" />
             <ImageView
-                android:layout_width="80dp"
-                android:id="@+id/maps_logo"
-                app:srcCompat="@drawable/ic_location_on_black_24dp"
-                android:layout_height="80dp" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/maps_logo"
-                android:layout_toRightOf="@+id/maps_logo"
-                android:textSize="32sp"
-                android:textColor="#B71C1C"
-                android:textStyle="bold"
-                android:layout_marginLeft="8dp"
-                android:text="Route to DAVIET"
-                android:layout_marginStart="8dp" />
+                android:scaleType="centerCrop"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/daviet_map_wego"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:srcCompat="@drawable/ic_location_on_black_24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="4dp"
+                    android:textColor="#424242"
+                    android:textStyle="bold"
+                    android:text="Route to DAVIET"
+                    android:layout_marginStart="4dp" />
+
+            </LinearLayout>
+
+
+
             <!--<LinearLayout-->
                 <!--android:layout_width="wrap_content"-->
                 <!--android:layout_height="wrap_content"-->

@@ -6,12 +6,14 @@ package com.example.tpoapplication;
 
 public class Companies {
     private String name, date, venue, eligibility, salary, ImgURL;
+    private boolean isOpen;
     public Companies(){}
     public Companies(String name,String date, String venue, String eligibility, String ImgId, String salary){
         this.name = name;
         this.eligibility = eligibility;
         this.venue = venue;
         this.ImgURL = ImgId;
+        this.isOpen = false;
         this.salary = salary;
         this.date = date;
     }
@@ -43,6 +45,10 @@ public class Companies {
     public String getSalary() {
         return salary;
     }
+
+    public boolean getisOpen(){return isOpen;}
+
+    public boolean setisOpen(){return isOpen;}
 
     public void setSalary(String salary) {
         this.salary = salary;

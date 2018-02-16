@@ -26,11 +26,11 @@ public class CompaniesAdapter extends RecyclerView.Adapter<CompaniesAdapter.Comp
 
     private List<Companies> companiesList;
     private List<Companies> itemsCopy;
+    private boolean isOpen;
     public class CompaniesViewHolder extends RecyclerView.ViewHolder {
         public TextView companyName, venue, date, eligibility, salary;
         public ImageView imageView,imageView2;
         public ProgressBar progress;
-
         public CompaniesViewHolder(View view) {
             super(view);
             companyName = view.findViewById(R.id.textView2);
@@ -59,16 +59,17 @@ public class CompaniesAdapter extends RecyclerView.Adapter<CompaniesAdapter.Comp
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(img.getTag().equals(R.drawable.ic_keyboard_arrow_down_black_24dp)) {
+                if(img.getTag().equals(R.drawable.ic_keyboard_arrow_down_black_24dp)&&!isOpen) {
                     img.setImageResource(R.drawable.ic_keyboard_arrow_up_black_24dp);
                     popup.setVisibility(View.VISIBLE);
                     img.setTag(R.drawable.ic_keyboard_arrow_up_black_24dp);
+                    isOpen = true;
 
                 }else{
                     img.setImageResource(R.drawable.ic_keyboard_arrow_down_black_24dp);
                     popup.setVisibility(View.GONE);
                     img.setTag(R.drawable.ic_keyboard_arrow_down_black_24dp);
-
+                    isOpen = false;
                 }
             }
         });
@@ -101,6 +102,9 @@ public class CompaniesAdapter extends RecyclerView.Adapter<CompaniesAdapter.Comp
                 .error(R.drawable.no_logo)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.imageView);
+        isOpen = companiesList.get(position).getisOpen();
+
+
 
     }
 

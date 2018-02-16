@@ -19,7 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener,AboutDavietFragment.OnFragmentInteractionListener,AboutFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener,AboutFragment.OnFragmentInteractionListener {
     short clicked = 1;
     boolean mDrawerItemSelected = false;
     @Override
@@ -91,16 +91,7 @@ public class MainActivity extends AppCompatActivity
                         FragmentManager fragmentManager = getSupportFragmentManager();
                         fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
                     }
-                    else if (clicked == 3){
-                        fragmentClass = AboutDavietFragment.class;
-                        try {
-                            fragment = (android.support.v4.app.Fragment) fragmentClass.newInstance();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left).replace(R.id.flContent, fragment).commit();
-                    }
+
                     clicked = 0;
                     mDrawerItemSelected = false;
                 }

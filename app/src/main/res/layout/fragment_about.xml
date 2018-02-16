@@ -39,12 +39,13 @@
         android:text="ABOUT DAVIET"/>
 
     <TextView
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:textColor="#000"
+        android:textColor="#0645AD"
         android:layout_height="wrap_content"
         android:linksClickable="true"
+        android:id="@+id/aboutdav"
         android:text="http://www.davietjal.org/daviet-placements/"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"/>
